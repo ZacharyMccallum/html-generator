@@ -1,10 +1,23 @@
 import webbrowser, os
-stu_dict = {'Zachary McCallum' : {'FName' : 'Zachary', 'LName' : 'McCallum'}
-        ,'Alec Brown' : {'FName' : 'Alec', 'LName' : 'Brown'}
-        , 'Navkiran Singh' : {'FName' : 'Navkiran', 'LName' : 'Singh'}}
+stu_dict = {
+    'Zachary McCallum' : {'FName' : 'Zachary', 'LName' : 'McCallum'}
+    ,'Alec Brown' : {'FName' : 'Alec', 'LName' : 'Brown'}
+    , 'Navkiran Singh' : {'FName' : 'Navkiran', 'LName' : 'Singh'}
+}
+
+html_paths = {
+    0 : {"./"}
+    ,1 : {"./zachary"}
+    ,2 : {"./alec"}
+    ,3 : {"./navkiran"}
+}
 
 def publishPages(stu_dict):
     for stu_name, stu_info in stu_dict.itemms():
-        for k in dict2:
-            filename = 
-            webbrowser.open('file://' + os.path.realpath(filename))
+        print("\nStudent Name: ", stu_name)
+        
+        for key in stu_info:
+            filename = key +".html"
+
+    #Open webrowser to the main menu html page
+    webbrowser.open('file://' + os.path.realpath('mainmenu.html'))
