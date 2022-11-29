@@ -24,13 +24,16 @@ def publishPages(stu_dict):
 
     #HTML Table creation
     strTable = "<html><table><tr><th>Student</th><th>Link</th></tr>"
-    print(f"this {strTable}")
+    print(f"Table Generating...")
     for student in students_list:
         for link in files_list:
-            # TODO fix duplicate links in iteration of loops
-            strRW = "<tr><td>"+str(student)+ "</td><td>"+f"<a href={str('./'+link)}>"+str(link)+"</a>"+"</td></tr>"
-            # Add new row to table
-            strTable = strTable+strRW
+            # Check to make sure the student and link are alike before adding a new tabel row
+            if student in link:
+                strRW = "<tr><td>"+str(student)+ "</td><td>"+f"<a href={str('./'+link)}>"+str(link)+"</a>"+"</td></tr>"
+                # Add new row to table
+                strTable = strTable+strRW
+            else:
+                continue
             
  
     strTable = strTable+"</table></html>"
