@@ -17,24 +17,56 @@ def main():
             case 1:
                 # Navkiran Singh's Function
                 print("Option 1 selected")
-                readData()
+                xlsx_contents = readData()
             case 2:
                 # Alec Brown Function
-                print("Option 2 selected")
+# [START REMOVE]
+                # hardcoded dictionary, needed for testing of option [2]
+                # Expected format for output of case 2
+                xlsx_contents = {
+                    'Zachary McCallum' : 
+                        { 'FName' : 'Zachary', 'FName_format' : 'Bold'
+                        , 'LName' : 'McCallum', 'LName_format' : 'Normal'}
+                    ,'Alec Brown':
+                        {'FName' : 'Alec', }
+                    , 'Navkiran Singh':
+                        {'FName' : 'Navkiran'}
+                        }
+# [END REMOVE]
+
+                # Check to make sure the contents have been read-in from the xlsx .file first
+                if xlsx_contents is not None:
+                    print("Option 2 selected")
+                    # Call your function here
+                    student_dictionary = generateHTML(xlsx_contents)
+                else:
+                    print('Please Select option 1 first')
+
             case 3:
                 # Zachary McCallum's Function
-                print("Option 3 selected")
-                # hardcoded dictionary, need for testing of option [3]
+
+# [START REMOVE]
+                # hardcoded dictionary, needed for testing of option [3]
+                # Expected format for output of case 2
                 student_dictionary = {
-    'Zachary McCallum' : {'FName' : 'Zachary', 'LName' : 'McCallum'}
-    ,'Alec Brown' : {'FName' : 'Alec', 'LName' : 'Brown'}
-    , 'Navkiran Singh' : {'FName' : 'Navkiran', 'LName' : 'Singh'}
-}
-                publishPages(student_dictionary)
+                    'Zachary McCallum' : 
+                        {'filename': './mccallum'}
+                    ,'Alec Brown':
+                        {'filename': './brown.html'}
+                    , 'Navkiran Singh':
+                        {'filename': './brown.html'}
+                        }
+# [END REMOVE]
+                if student_dictionary is not None:
+                    print("Option 2 selected")
+                    publishPages(student_dictionary)
+                else:
+                    print('Please Select option 1 first')
+
             # Define Default Case (No option selected)
             case _:
                 print("No option selected")
             
-
+# Call the main function on script execution
 if __name__ == "__main__":
     main()
