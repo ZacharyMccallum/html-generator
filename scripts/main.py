@@ -28,17 +28,22 @@ def main():
                         { 'FName' : 'Zachary', 'FName_format' : 'Bold'
                         , 'LName' : 'McCallum', 'LName_format' : 'Normal'}
                     ,'Alec Brown':
-                        {'FName' : 'Alec', }
+                        {'FName' : 'Alec', 'FName_format' : 'Bold'
+                        , 'LName' : 'Brown', 'LName_format' : 'Normal'}
                     , 'Navkiran Singh':
-                        {'FName' : 'Navkiran'}
+                        {'FName' : 'Navkiran', 'FName_format' : 'Bold'
+                        , 'LName' : 'Singh', 'LName_format' : 'Normal'}
                         }
+# [TODO]
+                # Please include+test this in your code, i think the href may need to be messed with a bit
+#                <footer><p>Author: Team 3 - CSI 3680</p><p><a href='mainmenu.html'>Return Home</a></p></footer>
 # [END REMOVE]
 
                 # Check to make sure the contents have been read-in from the xlsx .file first
                 if xlsx_contents is not None:
                     print("Option 2 selected")
                     # Call your function here
-                    student_dictionary = generateHTML(xlsx_contents)
+                    #student_dictionary = generateHTML(xlsx_contents)
                 else:
                     print('Please Select option 1 first')
 
@@ -49,7 +54,7 @@ def main():
                 # hardcoded dictionary, needed for testing of option [3]
                 # Expected format for output of case 2
                 student_dictionary = {
-                    'Zachary McCallum' : 
+                    'Zachary McCallum': 
                         {'filename': './mccallum'}
                     ,'Alec Brown':
                         {'filename': './brown.html'}
