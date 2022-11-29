@@ -1,0 +1,11 @@
+
+person = {
+  "firstname": "Ricard",
+  "lastname": "Laurant",
+  "gender": "made"
+}
+
+x = person.keys()
+person["email"] = "rlaurant1@ameblo.jp"
+
+print(x)
