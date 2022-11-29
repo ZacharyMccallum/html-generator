@@ -1,25 +1,45 @@
-import webbrowser, os
-dict1 = {
-    'Zachary McCallum' : {'FName' : 'Zachary', 'LName' : 'McCallum'}
-    ,'Alec Brown' : {'FName' : 'Alec', 'LName' : 'Brown'}
-    , 'Navkiran Singh' : {'FName' : 'Navkiran', 'LName' : 'Singh'}
-}
+import webbrowser
+import os
 
 html_paths = {
-    0 : {"./"}
-    ,1 : {"./zachary"}
-    ,2 : {"./alec"}
-    ,3 : {"./navkiran"}
+    0: {"./"}, 1: {"./zachary"}, 2: {"./alec"}, 3: {"./navkiran"}
 }
 
+
 def publishPages(stu_dict):
+    files_list = []
+    students_list = []
     for stu_name, stu_info in stu_dict.items():
-        print("\nStudent Name: ", stu_name)
+        print("Generating page for:\n", stu_name)
 
-        for key in stu_info:
-            filename = key +".html"
+        for key, val in stu_info.items():
+            if key == "LName":
+                filename = str(val + ".html")
+                # Save the students name to list to use later
+                students_list.append(val)
+                # Save the file name to a list to use later
+                files_list.append(filename)
 
-    #Open webrowser to the main menu html page
-    webbrowser.open('file://' + os.path.realpath('mainmenu.html'))
+    print(files_list)
 
-publishPages(dict1)
+    #HTML Table creation
+    strTable = "<html><table><tr><th>Student</th><th>Link</th></tr>"
+    print(f"this {strTable}")
+    for student in students_list:
+        for link in files_list:
+            # TODO fix duplicate links in iteration of loops
+            strRW = "<tr><td>"+str(student)+ "</td><td>"+f"<a href={str('./'+link)}>"+str(link)+"</a>"+"</td></tr>"
+            # Add new row to table
+            strTable = strTable+strRW
+            
+ 
+    strTable = strTable+"</table></html>"
+ 
+    f = open('./web/mainmenu.html', 'w')
+    print(strTable)
+    f.write(strTable) 
+    
+    f.close()
+
+# Open webrowser to the main menu html page
+webbrowser.open('file://' + os.path.realpath('./web/mainmenu.html'))
