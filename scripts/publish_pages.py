@@ -13,10 +13,6 @@ import os
 
 # This function creates a Main menu page for 
 def publishPages(stu_dict):
-    # Create empty lists for storage of filenames and student page names
-    files_list = []
-    students_list = []
-    
     #HTML Table creation
     strTable = "<html><link rel=\"stylesheet\" href=\"projectstyle.css\"><table><tr><th>Student</th><th>Link</th></tr>"
     print(f"Table Generating...")
@@ -25,38 +21,17 @@ def publishPages(stu_dict):
         print("Generating page for:\n", stu_name)
         # Access all elements of the 
         for val in stu_info.values():
+            # Store the value of the filename into variable
             filename = str(val)
-            # Save the students name to list to use in table generation
-            students_list.append(stu_name)
-            # Save the file name to a list to use in table generation
-            files_list.append(filename)
-            strRW = "<tr><td>"+str(stu_name)+"</td><td>"+f"<a href=./{str(filename)}>"+str(filename)+"</a>"+"</td></tr>"
+            # format content 
+            displaySplit = filename.split('.')
+            displayName = displaySplit[0]
+            # Add to string to be added to file
+            strRW = "<tr><td>"+str(stu_name)+"</td><td>"+f"<a href=./{str(filename)}>"+str(displayName)+"</a>"+"</td></tr>"
             strTable = strTable+strRW
-                
-    # Check to make sure the files are all collected
-    print(students_list)
-    print(files_list)
 
-    
-#    for student in students_list:
-#        for link in files_list:
-#            titleStr = student.lower()
-#            title = titleStr.split(' ', 1)
-#            print(title[1])
-#            # Check to make sure the student and link are alike before adding a new tabel row
-#            if title[1] in link:
-#                strRW = "<tr><td>"+str(student)+"</td><td>"+f"<a href={str(link)}>"+str(link)+"</a>"+"</td></tr>"
-#                print(f"Student: {student}")
-#                print(f"Link: {link}")
-#                # Add new row to table
-#                strTable = strTable+strRW
-#                title = ''
-#                continue
-#            else:
-#                continue
-# 
     strTable = strTable+"</table><footer><p>Author: Team 3 - CSI 3680</p><p><a href='mainmenu.html'>Return Home</a></p></footer></html>"
- 
+
     f = open('./web/mainmenu.html', 'w')
     print(strTable)
     f.write(strTable)
