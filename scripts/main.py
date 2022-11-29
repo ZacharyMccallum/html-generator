@@ -9,11 +9,11 @@ def main():
                 # Expected format for output of case 2
     student_dictionary = {
             'Zachary McCallum': 
-                {'filename': './mccallum'}
+                {'filename': 'mccallum.html'}
             ,'Alec Brown':
-                {'filename': './brown.html'}
+                {'filename': 'brown.html'}
             , 'Navkiran Singh':
-                {'filename': './brown.html'}
+                {'filename': 'singh.html'}
             }
 # [END REMOVE]
 # [START REMOVE]
