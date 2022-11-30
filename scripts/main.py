@@ -20,13 +20,12 @@ def main():
                 # hardcoded dictionary, needed for testing of option [2]
                 # Expected format for output of case 2
     xlsx_contents = {
-        'Zachary McCallum' : 
-            { 'FName' : 'Zachary', 'FName_format' : 'Bold'
-            , 'LName' : 'McCallum', 'LName_format' : 'Normal'}
-        ,'Alec Brown':
+        'Zachary' : 
+            { 'Mccallum' : ['email']}
+        ,'2':
             {'FName' : 'Alec', 'FName_format' : 'Bold'
             , 'LName' : 'Brown', 'LName_format' : 'Normal'}
-        , 'Navkiran Singh':
+        , '3':
             {'FName' : 'Navkiran', 'FName_format' : 'Bold'
             , 'LName' : 'Singh', 'LName_format' : 'Normal'}
         }
