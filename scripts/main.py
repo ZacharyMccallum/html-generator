@@ -53,8 +53,6 @@ def main():
                     print('Please Select option 1 first')
 
             # Define Default Case (No option selected)
-            case 0:
-                print('Loading')
             case _:
                 print("Please enter your selection")
             
