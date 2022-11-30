@@ -16,23 +16,6 @@ def main():
                 {'filename': 'singh.html'}
             }
 # [END REMOVE]
-# [START REMOVE]
-                # hardcoded dictionary, needed for testing of option [2]
-                # Expected format for output of case 2
-    xlsx_contents = {
-        'Zachary' : 
-            { 'Mccallum' : ['email']}
-        ,'2':
-            {'FName' : 'Alec', 'FName_format' : 'Bold'
-            , 'LName' : 'Brown', 'LName_format' : 'Normal'}
-        , '3':
-            {'FName' : 'Navkiran', 'FName_format' : 'Bold'
-            , 'LName' : 'Singh', 'LName_format' : 'Normal'}
-        }
-# [TODO]
-                # Please include+test this in your code, i think the href may need to be messed with a bit
-#                <footer><p>Author: Team 3 - CSI 3680</p><p><a href='mainmenu.html'>Return Home</a></p></footer>
-# [END REMOVE]
     # Set default if enter is chosen
     user_input = "0"
     while user_input != "99":
@@ -50,6 +33,7 @@ def main():
                 # Navkiran Singh's Function
                 print("Option 1 selected")
                 xlsx_contents = readData()
+                print(xlsx_contents)
             case "2":
                 # Alec Brown Function
                 # Check to make sure the contents have been read-in from the xlsx .file first
