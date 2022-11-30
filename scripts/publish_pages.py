@@ -24,8 +24,8 @@ def publishPages(stu_dict):
             # Store the value of the filename into variable
             filename = str(val)
             # format content 
-            displaySplit = filename.split('.')
-            displayName = displaySplit[0]
+            displayTuple = filename.split('.')
+            displayName = displayTuple[0]
             # Add to string to be added to file
             strRW = "<tr><td>"+str(stu_name)+"</td><td>"+f"<a href=./{str(filename)}>"+str(displayName)+"</a>"+"</td></tr>"
             strTable = strTable+strRW
