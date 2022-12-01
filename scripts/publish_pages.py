@@ -1,16 +1,6 @@
 import webbrowser
 import os
 
-#Expected format for dictionary:
-#student_dictionary = {
-#    'Zachary McCallum': 
-#        {'filename': 'mccallum.html'}
-#    ,'Alec Brown':
-#        {'filename': 'brown.html'}
-#    , 'Navkiran Singh':
-#        {'filename': 'brown.html'}
-#    }
-
 # This function publishes a main menu for the user to view all the newly created files from the browser
 def publishPages(stu_dict):
     #HTML Table creation

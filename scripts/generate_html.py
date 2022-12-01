@@ -2,16 +2,14 @@ from airium import Airium
 
 def genHTML(content_dict):
   print('Generating HTML from XLSX Content')
-  # Create lists to store data created
-  #proj_path_list = []
+  # Create empty vars to store data created
   rel_path_list = []
-  #html_content_list = []
   title_list = []
   output_dict = {}
+
+  # stu_name = key from passed dictionary
+  # content = value - inside dictionary from passed dictionary
   for stu_name, content in content_dict.items():
-    # stu_name = key from passed dictionary
-    # content = value dictionary from passed dictionary
-    
     # Traverse content dictionary
     for lastname, dob in content.items():
       # Create Airium object
@@ -23,7 +21,6 @@ def genHTML(content_dict):
         with a.head():
           a.meta(charset="utf-8")
           a.title(_t=f"{stu_name} {lastname}'s Page")
-
       # Create document content
         with a.body():
             # Create H3 and add contents from 'a("*")'
@@ -35,8 +32,7 @@ def genHTML(content_dict):
             with a.small():
               margin = 'margin: auto 10px;'
               a.p(_t="Author: Team 3 - CSI 3680", style = margin)
-              #a.link(_t="Return Home", href='./mainmenu.html', style = margin)
-  
+              
       # Extract Value of 'a' to string
       html = str(a)
       # Add html to dictionary
@@ -53,13 +49,9 @@ def genHTML(content_dict):
       # open new file at the path and write html content
       with open(f'{path}', 'wb') as file:
         file.write(bytes(html, encoding='utf-8'))
-
       # Prepare dictionary for passing to next function
-      # output_dict = {title: {'filename': rel_path for rel_path in rel_path_list} for title in title_list}
       output_dict = {title_list[i]: {'filename': rel_path_list[i]} for i in range(len(rel_path_list))}
-      #print(output_dict)
-      
-      
+     
 
   return output_dict
 
