@@ -33,7 +33,6 @@ def publishPages(stu_dict):
     strTable = strTable+"</table><footer><p>Author: Team 3 - CSI 3680</p><p><a href='mainmenu.html'>Return Home</a></p></footer></html>"
 
     f = open('./web/mainmenu.html', 'w')
-    print(strTable)
     f.write(strTable)
     f.close()
     # Open webrowser to the main menu html page

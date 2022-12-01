@@ -1,20 +1,19 @@
-import format_html
+from generate_html import genHTML
 from publish_pages import publishPages
 from import_data import readData
 
 def main():
-
-    # [START REMOVE]
+# [START REMOVE]
                 # hardcoded dictionary, needed for testing of option [3]
                 # Expected format for output of case 2
-    student_dictionary = {
-            'Zachary McCallum': 
-                {'filename': 'mccallum.html'}
-            ,'Alec Brown':
-                {'filename': 'brown.html'}
-            , 'Navkiran Singh':
-                {'filename': 'singh.html'}
-            }
+    #student_dictionary = {
+    #        'Zachary McCallum': 
+    #            {'filename': 'mccallum.html'}
+    #        ,'Alec Brown':
+    #            {'filename': 'brown.html'}
+    #        , 'Navkiran Singh':
+    #            {'filename': 'singh.html'}
+    #        }
 # [END REMOVE]
     # Set default if enter is chosen
     user_input = "0"
@@ -40,7 +39,7 @@ def main():
                 if xlsx_contents is not None:
                     print("Option 2 selected")
                     # Call your function here
-                    #student_dictionary = generateHTML(xlsx_contents)
+                    student_dictionary = genHTML(xlsx_contents)
                 else:
                     print('Please Select option 1 first')
 
