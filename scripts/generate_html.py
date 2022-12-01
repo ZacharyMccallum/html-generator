@@ -50,7 +50,7 @@ def genHTML(content_dict):
       print(f"\n{stu_name}\n".center(30))
       print(f"Title: {title}")
       print(f"Rel Path: {rel_path}")
-      # open new file @ path and write html content
+      # open new file at the path and write html content
       with open(f'{path}', 'wb') as file:
         file.write(bytes(html, encoding='utf-8'))
 
