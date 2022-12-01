@@ -3,20 +3,8 @@ from publish_pages import publishPages
 from import_data import readData
 
 def main():
-# [START REMOVE]
-                # hardcoded dictionary, needed for testing of option [3]
-                # Expected format for output of case 2
-    #student_dictionary = {
-    #        'Zachary McCallum': 
-    #            {'filename': 'mccallum.html'}
-    #        ,'Alec Brown':
-    #            {'filename': 'brown.html'}
-    #        , 'Navkiran Singh':
-    #            {'filename': 'singh.html'}
-    #        }
-# [END REMOVE]
     # Set default if enter is chosen
-    user_input = "0"
+    user_input = "1"
     while user_input != "99":
         print("XSLX->HTML Generator Menu".center(30, "-"))
         print("Please select an option:\n".center(30))
@@ -45,6 +33,7 @@ def main():
 
             case "3":
                 # Zachary McCallum's Function
+                # Check to make sure the contents have been passed from option 2 first
                 if student_dictionary is not None:
                     print("Option 2 selected")
                     publishPages(student_dictionary)
