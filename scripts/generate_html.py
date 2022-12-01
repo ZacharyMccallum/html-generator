@@ -1,13 +1,11 @@
 from airium import Airium
 
 def genHTML(content_dict):
-  
   print('Generating HTML from XLSX Content')
-  
   # Create lists to store data created
-  proj_path_list = []
+  #proj_path_list = []
   rel_path_list = []
-  html_content_list = []
+  #html_content_list = []
   title_list = []
   output_dict = {}
   for stu_name, content in content_dict.items():
@@ -47,9 +45,8 @@ def genHTML(content_dict):
       rel_path = f"{stu_name}{lastname}.html".lower()
       # Append info to list
       title_list.append(title)
-      proj_path_list.append(path)
       rel_path_list.append(rel_path)
-      html_content_list.append(html)
+      #html_content_list.append(html)
       print(f"\n{stu_name}\n".center(30))
       print(f"Title: {title}")
       print(f"Rel Path: {rel_path}")
