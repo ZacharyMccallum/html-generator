@@ -13,7 +13,7 @@ def genHTML(content_dict):
   for stu_name, content in content_dict.items():
     # stu_name = key from passed dictionary
     # content = value dictionary from passed dictionary
-    print(f"\n{stu_name}\n")
+    
     # Traverse content dictionary
     for lastname, dob in content.items():
       # Create Airium object
@@ -33,19 +33,24 @@ def genHTML(content_dict):
                 a(f"Hello {stu_name} {lastname}")
             with a.p(id="", klass=''):
                 a(f"Date of Birth: {dob}")
+        with a.footer():
+            with a.small():
+              margin = 'margin: auto 10px;'
+              a.p(_t="Author: Team 3 - CSI 3680", style = margin)
+              #a.link(_t="Return Home", href='./mainmenu.html', style = margin)
   
       # Extract Value of 'a' to string
       html = str(a)
       # Add html to dictionary
       title = str(stu_name + ' ' + lastname)
-      path = f"./web/{stu_name}.html"
-      rel_path = f"{stu_name}.html".lower()
+      path = f"./web/{stu_name}{lastname}.html"
+      rel_path = f"{stu_name}{lastname}.html".lower()
       # Append info to list
       title_list.append(title)
       proj_path_list.append(path)
       rel_path_list.append(rel_path)
       html_content_list.append(html)
-      
+      print(f"\n{stu_name}\n".center(30))
       print(f"Title: {title}")
       print(f"Rel Path: {rel_path}")
       # open new file @ path and write html content

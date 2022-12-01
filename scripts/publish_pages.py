@@ -11,7 +11,7 @@ import os
 #        {'filename': 'brown.html'}
 #    }
 
-# This function creates a Main menu page for 
+# This function publishes a main menu for the user to view all the newly created files from the browser
 def publishPages(stu_dict):
     #HTML Table creation
     strTable = "<html><link rel=\"stylesheet\" href=\"projectstyle.css\"><table><tr><th>Student</th><th>Link</th></tr>"
