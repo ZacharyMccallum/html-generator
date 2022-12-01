@@ -43,7 +43,7 @@ def genHTML(content_dict):
       html = str(a)
       # Add html to dictionary
       title = str(stu_name + ' ' + lastname)
-      path = f"./web/{stu_name}{lastname}.html"
+      path = f"./web/{stu_name}{lastname}.html".lower()
       rel_path = f"{stu_name}{lastname}.html".lower()
       # Append info to list
       title_list.append(title)
